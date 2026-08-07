@@ -5,8 +5,16 @@
 - [x] Extract jwt secret key to `${JWT_SECRET}` in `application.properties`
 - [x] Confirm no hardcoded API keys or credentials exist in configurations
 
-## Phase 2: Operations
+## Phase 2: Operations & Restarts
 - [x] Stop orphaned backend processes on port `8080`
 - [x] Start the Spring Boot backend server supplying the new environment variables
 - [x] Start the Vite frontend server on port `5173`
 - [x] Verify server liveness and update `walkthrough.md`
+
+## Phase 3: Production Deployment (Railway)
+- [x] Create multi-stage `Dockerfile` for backend compilation and runtime JRE packaging
+- [x] Add MySQL Database service to the Railway project workspace
+- [x] Configure template variables to reference database credentials using `${{MySQL.VARIABLE_NAME}}`
+- [x] Align container port bindings and routing variables (`PORT=8080`)
+- [x] Permit `/error` endpoint in `SecurityConfig.java` to expose correct HTTP error codes
+- [x] Deploy and verify live endpoint liveness (`405 Method Not Allowed` successfully loaded)
