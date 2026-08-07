@@ -1,0 +1,31 @@
+# Target build folder
+target/
+
+# Uploaded resumes / file assets
+uploads/
+uploads/resumes/
+resumes/
+
+# Secrets / Environment variables
+.env
+*.env
+.env.*
+secrets/
+secrets.json
+
+# IDE / System files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Log files
+*.log
+logs/
+
+# Compile output
+*.class
+*.jar
+*.war
+*.ear

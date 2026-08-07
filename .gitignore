@@ -1,0 +1,29 @@
+# Editor and system settings
+.idea/
+.vscode/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+
+# Subfolder dependencies & build assets (backup safety check)
+frontend/node_modules/
+frontend/dist/
+backend/target/
+backend/uploads/
+backend/resumes/
+**/node_modules/
+**/target/
+**/uploads/
+**/resumes/
+
+# Environment configurations and keys
+.env
+.env.*
+*.env
+secrets/
+secrets.json
+**/secrets.json
