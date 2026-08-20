@@ -26,6 +26,9 @@ public class EmailClassificationService {
     @Value("${gemini.api.key}")
     private String apiKey;
 
+    @Value("${gemini.model:gemini-1.5-flash}")
+    private String modelName;
+
     private final ObjectMapper objectMapper;
 
     public static class ClassificationResult {
@@ -48,7 +51,8 @@ public class EmailClassificationService {
             throw new IllegalStateException("Gemini API key is not configured. Please set the GEMINI_API_KEY environment variable.");
         }
 
-        String url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=" + apiKey;
+        String model = (modelName == null || modelName.trim().isEmpty()) ? "gemini-1.5-flash" : modelName.trim();
+        String url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + apiKey;
         
         org.springframework.http.client.SimpleClientHttpRequestFactory requestFactory = new org.springframework.http.client.SimpleClientHttpRequestFactory();
         requestFactory.setConnectTimeout(5000);

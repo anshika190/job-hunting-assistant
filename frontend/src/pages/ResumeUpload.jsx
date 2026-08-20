@@ -112,7 +112,7 @@ export default function ResumeUpload() {
       setParsingStep('Extracting document text content...');
       
       // Simulate visual transitions for parsing steps
-      setTimeout(() => setParsingStep('Formatting schemas & querying Google Gemini (gemini-3.6-flash)...'), 1000);
+      setTimeout(() => setParsingStep('Formatting schemas & querying Google Gemini (gemini-1.5-flash)...'), 1000);
       
       const parseResponse = await apiFetch(`/api/resumes/${uploadResponse.id}/parse`, {
         method: 'POST',
